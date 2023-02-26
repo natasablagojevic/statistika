@@ -1,0 +1,111 @@
+vec[-4] : izbacuje se broj na zadatoj poziciji
+
+statisticke funkcije:
+	sum(vector)
+	min(vector)
+	max(vector)
+	mean(vector) : uzorocka srednja vrednost
+	var(vector) : popravljena uzorocka disperzija
+	sd(vector)	: standardno odstupanje sqrt(var(x))
+
+sortiranje:
+	sort(vector)
+	sort(vector, decreasing=TRUE)
+
+matrica:
+	matrix(
+		vector,
+		nrow = broj redova
+		ncol = broj kolona
+		byrow = TRUE (popunjavamo matrice po redovima)
+	)
+
+funkcije:
+	function(arg1, .., argN) {
+		TELO
+	}
+
+sulcajnost:
+	sample(vector)
+	sample(vector, size=broj ,replace=T/F, prob=broj)
+				            bez ponavljanja  verovatnoca
+
+prikaz rezultata eksperimenta:
+	table(sample(...))
+
+
+raspodele:
+	unif	: uniformna
+	norm	: normalna
+	pois	: puasonova
+	beta	: beta
+	gamma	: gama
+	binom	: binomna
+	cauchy	: kosi
+	chisq	: 
+	exp		: eksponencijalna
+
+	prefiksi ispred imena raspodele:
+		p 	: f-ja raspodele
+		d 	: gustina raspodele
+		q	: kvantili (inverzna od f-je raspodele (za vrv p vraca q tkd. p = P(X <= q)))
+
+	------------------
+	dbinom(x, size, prob, log=FALSE)
+	pbinom(q, size, prob, lower.tail=T, log.p=F)
+	qbinom(p, size, prob, lower.tail=T, log.p=F)
+
+	dnorm(x, mean=0, std=1, log=F)
+	pnorm(z, mean=0, std=1, lower.tail=T, log.p=F)
+
+	dexp(x, rate=1, log=F)	rate=lambda
+	pexp(q, rate=1, lower.tail=T, log.p=F)
+	qexp(p, rate=1, lower.tail=T, log.p=F)
+	
+
+	uzorak elementa:
+		rbinom(n, size, prob), n=obim uzorka
+
+crtanje grafa:
+	plot(vektor, gustina_raspodele, main=naslov, xlab="naziv x-ose", ylab="naziv y-ose")		
+	plot(vektor, gustina_raspodele, type="tip", main="")
+		type:
+			p : points
+			l : lines
+			b : both
+			c : for the lines part alone of "b"
+			o : for both 'overplotted'
+			h : histogram - vertical lines
+			s : star steps
+			S : other steps
+			n : no plotting
+
+dataframe: 
+	- nacin za cuvanje podataka i analizu;	
+	- prikaz tabelarnih podataka
+	- lista koja sadrzi vektore jednakih duzina, i ne moraju biti istog tipa
+	- kolonama se pristupa preko $
+	- sa $ mozemo da dodamo nove elemente
+	- df[1, ] prva vrsta
+	- df[, 1] prva kolona 
+	
+	data.frame(kolona1 = c(1, 2,3), kolona2=c("p", "d", "t"))
+
+ucitavanje ekstremnih podataka:
+	read.csv("naziv.csv")
+
+graficki prikaz podataka:
+	- obezbedjenu su f-je za geenrisanje razlicitih statis. podataka
+
+	plot(x, y)
+
+pie chart:
+	share = c(brojevi)
+	names(share) <- (brand <- c())
+
+	pie(share, main="")
+
+Bar char:
+	- bar plotovi sluze za graficki prikaz kategorickih promenljivih
+	- prkazuje se koliko postoji podataka u bazi iz odgovarajuce kategorije
+	
